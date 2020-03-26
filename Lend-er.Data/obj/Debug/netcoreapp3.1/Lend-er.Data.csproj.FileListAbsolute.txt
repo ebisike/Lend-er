@@ -1,0 +1,13 @@
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Data.deps.json
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Data.runtimeconfig.json
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Data.runtimeconfig.dev.json
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Data.dll
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Data.pdb
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Entities.dll
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\bin\Debug\netcoreapp3.1\Lend-er.Entities.pdb
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\obj\Debug\netcoreapp3.1\Lend-er.Data.csprojAssemblyReference.cache
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\obj\Debug\netcoreapp3.1\Lend-er.Data.AssemblyInfoInputs.cache
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\obj\Debug\netcoreapp3.1\Lend-er.Data.AssemblyInfo.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\obj\Debug\netcoreapp3.1\Lend-er.Data.csproj.CopyComplete
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\obj\Debug\netcoreapp3.1\Lend-er.Data.dll
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Data\obj\Debug\netcoreapp3.1\Lend-er.Data.pdb
