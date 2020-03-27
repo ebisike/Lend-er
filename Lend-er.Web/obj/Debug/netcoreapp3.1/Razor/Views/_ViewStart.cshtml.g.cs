@@ -26,8 +26,22 @@ using Lend_er.Web.Models;
 #line default
 #line hidden
 #nullable disable
+#nullable restore
+#line 3 "C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\Views\_ViewImports.cshtml"
+using Lend_er.Web.ViewModels;
+
+#line default
+#line hidden
+#nullable disable
+#nullable restore
+#line 4 "C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\Views\_ViewImports.cshtml"
+using Lend_er.Entities;
+
+#line default
+#line hidden
+#nullable disable
     [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"7091c65830b0329e613be026ede8a57552863778", @"/Views/_ViewStart.cshtml")]
-    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"09b5ca900b9ff96c33a484e352e3423b0cad50fc", @"/Views/_ViewImports.cshtml")]
+    [global::Microsoft.AspNetCore.Razor.Hosting.RazorSourceChecksumAttribute(@"SHA1", @"440ab919ef07b8d26e1864b399f3eebcc850d1e5", @"/Views/_ViewImports.cshtml")]
     public class Views__ViewStart : global::Microsoft.AspNetCore.Mvc.Razor.RazorPage<dynamic>
     {
         #pragma warning disable 1998

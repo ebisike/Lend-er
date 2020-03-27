@@ -7,7 +7,7 @@ using System.Text;
 
 namespace Lend_er.Data
 {
-    public class LenderDbContext : DbContext
+    public class LenderDbContext : IdentityDbContext<ApplicationUser>
     {
         public LenderDbContext(DbContextOptions<LenderDbContext> options) : base(options)
         {

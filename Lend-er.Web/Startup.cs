@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Lend_er.Data;
+using Lend_er.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -27,6 +29,9 @@ namespace Lend_er.Web
         {
             services.AddControllersWithViews();
             services.AddDbContextPool<LenderDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LenderConnection")));
+
+            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<LenderDbContext>();
+            services.AddMvc(opt => opt.EnableEndpointRouting = false);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -44,8 +49,10 @@ namespace Lend_er.Web
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
+            app.UseAuthentication();
 
             app.UseRouting();
+            app.UseMvc();
 
             app.UseAuthorization();
 
