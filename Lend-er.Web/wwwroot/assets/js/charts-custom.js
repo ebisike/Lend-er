@@ -1,5 +1,7 @@
 /*global $, document*/
 $(document).ready(function () {
+    var debit = document.getElementById("debitor").value;
+    var credit = document.getElementById("creditor").value;
 
     'use strict';
 
@@ -498,14 +500,12 @@ $(document).ready(function () {
         },
         data: {
             labels: [
-                "A",
-                "B",
-                "C",
-                "D"
+                "creditors",
+                "deptors"                
             ],
             datasets: [
                 {
-                    data: [300, 50, 100, 80],
+                    data: [credit,debit],
                     borderWidth: 0,
                     backgroundColor: [
                         '#723ac3',
@@ -544,14 +544,12 @@ $(document).ready(function () {
         },
         data: {
             labels: [
-                "A",
-                "B",
-                "C",
-                "D"
+                "creditors",
+                "deptors"                
             ],
             datasets: [
                 {
-                    data: [120, 90, 77, 95],
+                    data: [credit,debit],
                     borderWidth: [0, 0, 0, 0],
                     backgroundColor: [
                         '#b53dde',

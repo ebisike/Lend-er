@@ -26,6 +26,7 @@
         "dependencies": {
           "Lend-er.Data": "1.0.0",
           "Lend-er.Entities": "1.0.0",
+          "Lend-er.Services": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.3",
           "Microsoft.EntityFrameworkCore.Design": "3.1.3",
           "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
@@ -347,6 +348,20 @@
         },
         "compile": {
           "lib/net45/Microsoft.AspNet.Identity.EntityFramework.dll": {}
+        }
+      },
+      "Microsoft.AspNet.Providers.Core/2.0.0": {
+        "dependencies": {
+          "EntityFramework": "6.1.0"
+        },
+        "runtime": {
+          "lib/net40/System.Web.Providers.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.21122.0"
+          }
+        },
+        "compile": {
+          "lib/net40/System.Web.Providers.dll": {}
         }
       },
       "Microsoft.AspNetCore.Cryptography.Internal/3.1.3": {
@@ -2251,6 +2266,19 @@
           "Lend-er.Entities.dll": {}
         }
       },
+      "Lend-er.Services/1.0.0": {
+        "dependencies": {
+          "Lend-er.Data": "1.0.0",
+          "Microsoft.AspNet.Providers.Core": "2.0.0",
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "3.1.3"
+        },
+        "runtime": {
+          "Lend-er.Services.dll": {}
+        },
+        "compile": {
+          "Lend-er.Services.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
         "compile": {
           "Microsoft.AspNetCore.Antiforgery.dll": {}
@@ -3882,6 +3910,13 @@
       "path": "microsoft.aspnet.identity.entityframework/2.2.3",
       "hashPath": "microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512"
     },
+    "Microsoft.AspNet.Providers.Core/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JMk31PExMANVDc04aSUyIlcL3pkFVyNg/dDn+ZZzmhZ2CBctI90BWQH1L0zXgD61ZWW5r4ybInV362sRKWIC+A==",
+      "path": "microsoft.aspnet.providers.core/2.0.0",
+      "hashPath": "microsoft.aspnet.providers.core.2.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Cryptography.Internal/3.1.3": {
       "type": "package",
       "serviceable": true,
@@ -4994,6 +5029,11 @@
       "sha512": ""
     },
     "Lend-er.Entities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Lend-er.Services/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

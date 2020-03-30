@@ -81,7 +81,11 @@ namespace Lend_er.Web.Controllers
             return View(model);
         }
 
+        //[Route("login")]
+        [Route("")]
         [Route("login")]
+        //[Route("Index")]
+        [Route("~/")]
         [HttpGet]
         public IActionResult Login()
         {
@@ -94,7 +98,7 @@ namespace Lend_er.Web.Controllers
 
         [Route("login")]
         [HttpPost]
-        public async Task<IActionResult> Login(RegistrationViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {

@@ -16,15 +16,24 @@ namespace Lend_er.Services.Implementation
         {
             _lender = lenderDbContext;
         }
-        public async void Delete(int id)
+        public void Delete(string id)
         {
             var entity = _lender.Set<T>().Find(id);
             if (entity != null)
             {
                 _lender.Set<T>().Remove(entity);
-                await _lender.SaveChangesAsync();
+                 _lender.SaveChanges();
             }
+        }
 
+        public void DeleteCreditDebit(Guid id)
+        {
+            var entity = _lender.Set<T>().Find(id);
+            if (entity != null)
+            {
+                _lender.Set<T>().Remove(entity);
+                _lender.SaveChanges();
+            }
         }
 
         public ICollection<T> FindAll(Expression<Func<T, bool>> match)
@@ -37,7 +46,12 @@ namespace Lend_er.Services.Implementation
             return _lender.Set<T>().ToList();
         }
 
-        public T GetById(int id)
+        public T GetById(string id)
+        {
+            return _lender.Set<T>().Find(id);
+        }
+
+        public T GetByIdCreditDebit(Guid id)
         {
             return _lender.Set<T>().Find(id);
         }

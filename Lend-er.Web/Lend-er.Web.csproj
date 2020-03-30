@@ -23,10 +23,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Lend-er.Data\Lend-er.Data.csproj" />
     <ProjectReference Include="..\Lend-er.Entities\Lend-er.Entities.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\ProfilePhoto\" />
+    <ProjectReference Include="..\Lend-er.Services\Lend-er.Services.csproj" />
   </ItemGroup>
 
 

@@ -21,5 +21,6 @@ namespace Lend_er.Data
 
         public DbSet<Deptors> deptors { get; set; }
         public DbSet<Creditors> creditors { get; set; }
+        public DbSet<Payments> payments { get; set; }
     }
 }

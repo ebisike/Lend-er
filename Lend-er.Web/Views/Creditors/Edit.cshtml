@@ -1,0 +1,97 @@
+﻿@model Lend_er.Web.ViewModels.Creditor.CreditorViewModel
+
+@{
+    Layout = "~/Views/Shared/dashboard.cshtml";
+    ViewData["Title"] = "Edit";
+    ViewBag.Title = "Creditor Update";
+}
+
+
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </ul>
+</div>
+
+<!-- Basic Form-->
+<div class="col-lg-12 ml-0">
+    <div class="block">
+        <div class="title"><strong class="d-block">Update</strong><span class="d-block">A Lanister always pays His depts.</span></div>
+        <div class="block-body">
+            <form asp-action="Edit" asp-controller="Creditors" method="post">
+                <div class="row">
+                    <div class="col-lg-6 pr-3">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                        <input asp-for="id" class="form-control" type="hidden" />
+                        <input asp-for="userId" class="form-control" type="hidden" />
+
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="control-label"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Address" class="control-label"></label>
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Phone" class="control-label"></label>
+                            <input asp-for="Phone" class="form-control" />
+                            <span asp-validation-for="Phone" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 pl-3">
+                        <div class="form-group">
+                            <label asp-for="DueDate" class="control-label"></label>
+                            <input asp-for="DueDate" class="form-control" type="date" />
+                            <span asp-validation-for="DueDate" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="Description" class="control-label"></label>
+                            <input asp-for="Description" class="form-control" />
+                            <span asp-validation-for="Description" class="text-danger"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label asp-for="MoneyOwed" class="control-label"></label>
+                            <input asp-for="MoneyOwed" class="form-control" />
+                            <span asp-validation-for="MoneyOwed" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="interestPerDay" class="control-label"></label>
+                            <input asp-for="interestPerDay" class="form-control" />
+                            <span asp-validation-for="interestPerDay" class="text-danger"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="submit" value="Save" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div>
+        <a asp-action="Index">Back to List</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

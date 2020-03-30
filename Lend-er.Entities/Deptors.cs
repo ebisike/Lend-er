@@ -7,9 +7,8 @@ namespace Lend_er.Entities
 {
     public class Deptors
     {
-        [Key]
-        public int Id { get; set; }
-        public int userId { get; set; }
+        public Guid Id { get; set; }
+        public string userId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -21,5 +20,9 @@ namespace Lend_er.Entities
         public bool status { get; set; }
         public int AccountNumber { get; set; }
         public string BankName { get; set; }
+        public int MoneyOwed { get; set; }
+        public double percentageInterest { get; set; }
+        public string Description { get; set; }
+        public List<Payments> payments { get; set; }
     }
 }

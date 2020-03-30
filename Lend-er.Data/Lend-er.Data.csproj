@@ -6,8 +6,26 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200326165513_initial.cs" />
+    <Compile Remove="Migrations\20200326165513_initial.Designer.cs" />
+    <Compile Remove="Migrations\20200326194329_addingIdentity.cs" />
+    <Compile Remove="Migrations\20200326194329_addingIdentity.Designer.cs" />
     <Compile Remove="Migrations\20200326202438_extendUser.cs" />
     <Compile Remove="Migrations\20200326202438_extendUser.Designer.cs" />
+    <Compile Remove="Migrations\20200326202632_extendUser.cs" />
+    <Compile Remove="Migrations\20200326202632_extendUser.Designer.cs" />
+    <Compile Remove="Migrations\20200326235931_extendUser2.cs" />
+    <Compile Remove="Migrations\20200326235931_extendUser2.Designer.cs" />
+    <Compile Remove="Migrations\20200327144359_new.cs" />
+    <Compile Remove="Migrations\20200327144359_new.Designer.cs" />
+    <Compile Remove="Migrations\20200327144851_new.cs" />
+    <Compile Remove="Migrations\20200327144851_new.Designer.cs" />
+    <Compile Remove="Migrations\20200327145143_new.cs" />
+    <Compile Remove="Migrations\20200327145143_new.Designer.cs" />
+    <Compile Remove="Migrations\20200327145323_new.cs" />
+    <Compile Remove="Migrations\20200327145323_new.Designer.cs" />
+    <Compile Remove="Migrations\20200327181623_init3.cs" />
+    <Compile Remove="Migrations\20200327181623_init3.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>

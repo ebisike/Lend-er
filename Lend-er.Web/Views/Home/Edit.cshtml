@@ -1,0 +1,104 @@
+﻿@model Lend_er.Web.ViewModels.RegistrationViewModel
+
+@inject SignInManager<ApplicationUser> signInManager;
+@inject UserManager<ApplicationUser> userManager;
+@inject IUserInfo  userinfo;
+
+@{
+    Layout = "~/Views/Shared/dashboard.cshtml";
+
+    string id = userManager.GetUserId(User);
+    ApplicationUser user = userinfo.UserInfo(id);
+    var imagepath = "/ProfilePhoto/" + (user.PhotoPath ?? "no_image.jpg");
+}
+
+
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </ul>
+</div>
+
+
+<!-- Basic Form-->
+<div class="col-lg-10 ml-0">
+    <div class="block">
+        <div class="title"><strong class="d-block">Update profile ||</strong><span class="d-block">A Lanister always pays His depts.</span></div>
+        <div class="block-body">
+            <form asp-action="Edit" asp-controller="Home" method="post" enctype="multipart/form-data">
+                <div class="row">
+                    <div class="col-lg-6 pr-3">
+                        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                        <input asp-for="Id" class="form-control" type="hidden" />
+
+                        <div class="form-group">
+                            <label asp-for="FirstName" class="control-label"></label>
+                            <input asp-for="FirstName" class="form-control" />
+                            <span asp-validation-for="FirstName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="LastName" class="control-label"></label>
+                            <input asp-for="LastName" class="form-control" />
+                            <span asp-validation-for="LastName" class="text-danger"></span>
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Email" class="control-label"></label>
+                            <input asp-for="Email" class="form-control" disabled />
+                            <span asp-validation-for="Email" class="text-danger"></span>
+                        </div>
+                        <div class="form-group-material">
+                            <select asp-for="Gender" asp-items="Html.GetEnumSelectList<gender>()" class="input-material form-control"></select><span class="text-danger" asp-validation-for="Gender"></span>
+                            @*<label for="register-email" class="label-material" asp-for="Gender"></label>*@
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="PhoneNumber" class="control-label"></label>
+                            <input asp-for="PhoneNumber" class="form-control" />
+                            <span asp-validation-for="PhoneNumber" class="text-danger"></span>
+                        </div>
+                        <div class="form-group-material">
+                            <select asp-for="State" asp-items="Html.GetEnumSelectList<state>()" class="input-material form-control"></select><span class="text-danger" asp-validation-for="State"></span>
+                            @*<label for="register-email" class="label-material" asp-for="State"></label>*@
+                        </div>
+                        <div class="form-group">
+                            <label asp-for="Address" class="control-label"></label>
+                            <input asp-for="Address" class="form-control" />
+                            <span asp-validation-for="Address" class="text-danger"></span>
+                        </div>
+
+                    </div>
+
+                    <div class="col-lg-4 pl-3 text-white-50">
+                        <img src="@imagepath" class="img-fluid img-thumbnail rounded-pill" />
+                        <div class="form-group terms-conditions text-center">
+                            <div class="custom-file m-2">
+                                <input asp-for="photo" class="form-control custom-file-input" />
+                                <label class="custom-file-label">Choose a passport file.....</label>
+                            </div>
+                        </div>
+                    </div>                    
+                </div>
+
+                <!--Button-->
+                <div class="form-group">
+                    <input type="submit" value="Update" class="btn btn-primary" />
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.custom-file-input').on("change", function () {
+                var filename = $(this).val().split("\\").pop();
+                $(this).next('.custom-file-label').html(filename);
+            });
+        });
+    </script>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

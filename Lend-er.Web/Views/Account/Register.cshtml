@@ -21,7 +21,7 @@
 <div class="col-lg-8 bg-white">
     <div class="align-items-center p-4" style="background: #2d3035">
         <div class="content p-4">
-            <form class="text-left form-validate" asp-action="Register" asp-controller="Account" enctype="multipart/form-data">
+            <form class="text-left form-validate" asp-action="Register" asp-controller="Account" enctype="multipart/form-data" method="post">
                 <div class="row">
                     <div class="col-6 pr-4">
                         <div class="form-group-material">
@@ -103,7 +103,7 @@
 </div>
 
 
-@section scripts{
+@section Scripts{
     <script>
         $(document).ready(function () {
             $('.custom-file-input').on("change", function () {

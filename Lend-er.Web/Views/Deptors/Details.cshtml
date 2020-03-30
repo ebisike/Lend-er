@@ -1,0 +1,55 @@
+﻿@model Lend_er.Web.ViewModels.Deptor.DashboardViewModel
+
+@{
+    Layout = "~/Views/Shared/dashboard.cshtml";
+    ViewBag.Title = "Credit details";
+    ViewData["Title"] = "Details";
+}
+
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </ul>
+</div>
+
+
+<section class="no-padding-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="drills-chart block">
+                    <h2>@Model.deptors.FirstName @Model.deptors.LastName</h2>
+                    <hr />
+                    <p class="text-uppercase">@Model.deptors.Description</p>
+                    <h5>Amount owed</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.deptors.MoneyOwed</p>
+                    <h5>Date Owed</h5>
+                    <p class="text-primary">@Model.deptors.DateOwed</p>
+                    <h5>Due Date</h5>
+                    <p class="text-primary">@Model.deptors.DueDate</p>
+                    <hr /><hr />
+                    <h3>Payments</h3>
+                    <h5>Money Payable</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.deptors.MoneyOwed</p>
+                    <h5>Total amount at @Model.deptors.percentageInterest interest rate per day</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.total</p>
+                    <h5>Money paid</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.MoneyPaid</p>
+                    <h5>Balance</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.balance</p>
+                    @if (Model.deptors.status == false)
+                    {
+                        <a asp-action="payoffline" asp-controller="Deptors" asp-route-id="@Model.deptors.Id" class="btn btn-success">pay offline</a>
+                        <a class="btn btn-primary" asp-action="edit" asp-controller="deptors" asp-route-id="@Model.deptors.Id">edit</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" asp-action="edit" asp-controller="deptors" asp-route-id="@Model.deptors.Id">edit</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,4 +1,6 @@
 $(document).ready(function () {
+    var debit = document.getElementById("debitor").value;
+    var credit = document.getElementById("creditor").value;
 
     'use strict';
 
@@ -97,6 +99,7 @@ $(document).ready(function () {
     // ------------------------------------------------------- //
     // Bar Chart
     // ------------------------------------------------------ //
+    
     var BARCHARTEXMPLE    = $('#barChartExample1');
     var barChartExample = new Chart(BARCHARTEXMPLE, {
         type: 'bar',
@@ -149,7 +152,7 @@ $(document).ready(function () {
                         "rgba(134, 77, 217, 1)"
                     ],
                     borderWidth: 1,
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    data: [debit],
                 },
                 {
                     label: "Data Set 2",
@@ -181,7 +184,7 @@ $(document).ready(function () {
                         "rgba(75, 75, 75, 0.7)"
                     ],
                     borderWidth: 1,
-                    data: [35, 40, 60, 47, 88, 27, 30],
+                    data: [credit],
                 }
             ]
         }
@@ -275,6 +278,7 @@ $(document).ready(function () {
     // ------------------------------------------------------- //
     // Bar Chart
     // ------------------------------------------------------ //
+
     var BARCHARTEXMPLE    = $('#barChartExample2');
     var barChartExample = new Chart(BARCHARTEXMPLE, {
         type: 'bar',
@@ -298,7 +302,7 @@ $(document).ready(function () {
             labels: ["January", "February", "March", "April", "May", "June", "July"],
             datasets: [
                 {
-                    label: "Data Set 1",
+                    label: "Creditors",
                     backgroundColor: [
                         "rgba(75, 75, 75, 0.7)",
                         "rgba(75, 75, 75, 0.7)",
@@ -327,10 +331,10 @@ $(document).ready(function () {
                         "rgba(75, 75, 75, 0.7)"
                     ],
                     borderWidth: 1,
-                    data: [65, 59, 80, 81, 56, 55, 40],
+                    data: [credit],
                 },
                 {
-                    label: "Data Set 2",
+                    label: "Debitors",
                     backgroundColor: [
                         "rgba(238, 139, 152, 0.7)",
                         "rgba(238, 139, 152, 0.7)",
@@ -359,7 +363,7 @@ $(document).ready(function () {
                         "rgba(238, 139, 152, 1)"
                     ],
                     borderWidth: 1,
-                    data: [35, 40, 60, 47, 88, 27, 30],
+                    data: [Debit],
                 }
             ]
         }

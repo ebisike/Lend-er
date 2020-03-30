@@ -7,3 +7,4 @@ C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Entities\obj\Debug\ne
 C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Entities\obj\Debug\netcoreapp3.1\Lend-er.Entities.AssemblyInfo.cs
 C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Entities\obj\Debug\netcoreapp3.1\Lend-er.Entities.dll
 C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Entities\obj\Debug\netcoreapp3.1\Lend-er.Entities.pdb
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Entities\obj\Debug\netcoreapp3.1\Lend-er.Entities.csprojAssemblyReference.cache

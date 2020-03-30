@@ -1,4 +1,4 @@
-﻿@model RegistrationViewModel
+﻿@model LoginViewModel
 
 @{
     Layout = "~/Views/Shared/signup.cshtml";
@@ -20,7 +20,7 @@
 <div class="col-lg-6 bg-white">
     <div class="form d-flex align-items-center">
         <div class="content">
-            <form asp-controller="Account" asp-action="Login" class="form-validate">
+            <form asp-controller="Account" asp-action="Login" class="form-validate" method="post">
                 <div class="form-group">
                     <input id="login-username" asp-for="Email" data-msg="Please enter your username" class="input-material"><span class="text-danger" asp-validation-for="Email"></span>
                     <label for="login-username" class="label-material" asp-for="Email"></label>
@@ -28,7 +28,18 @@
                 <div class="form-group">
                     <input id="login-password" asp-for="Password" data-msg="Please enter your password" class="input-material"><span class="text-danger" asp-validation-for="Password"></span>
                     <label for="login-password" class="label-material" asp-for="Password"></label>
-                </div><a id="login" href="index.html" class="btn btn-primary">Login</a>
+                </div>
+                <div class="form-group terms-conditions text-left">
+                    <div class="checkbox">
+                        <label asp-for="RememberMe">
+                            <input asp-for="RememberMe" class="checkbox-template" />
+                            @Html.DisplayNameFor(m => m.RememberMe)
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group text-left">
+                    <input id="register" type="submit" value="Login" class="btn btn-primary">
+                </div>
                 <!-- This should be submit button but I replaced it with <a> for demo purposes-->
             </form><a href="#" class="forgot-pass">Forgot Password?</a><br><small>Do not have an account? </small><a asp-action="register" asp-controller="Account" class="signup">Signup</a>
         </div>

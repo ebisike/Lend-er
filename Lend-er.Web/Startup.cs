@@ -4,6 +4,10 @@ using System.Linq;
 using System.Threading.Tasks;
 using Lend_er.Data;
 using Lend_er.Entities;
+using Lend_er.Services.Implementation;
+using Lend_er.Services.Interface;
+using Lend_er.Services.Services.Implementation;
+using Lend_er.Services.Services.Interface;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -32,6 +36,10 @@ namespace Lend_er.Web
 
             services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<LenderDbContext>();
             services.AddMvc(opt => opt.EnableEndpointRouting = false);
+            services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
+            services.AddScoped<ICreditDebit, CreditDebit>();
+            services.AddScoped<IUserInfo, UserInfo>();
+            services.AddScoped<INotifications, Notifications>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -56,12 +64,12 @@ namespace Lend_er.Web
 
             app.UseAuthorization();
 
-            app.UseEndpoints(endpoints =>
-            {
-                endpoints.MapControllerRoute(
-                    name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
+            //app.UseEndpoints(endpoints =>
+            //{
+            //    endpoints.MapControllerRoute(
+            //        name: "default",
+            //        pattern: "{controller=Home}/{action=Index}/{id?}");
+            //});
         }
     }
 }

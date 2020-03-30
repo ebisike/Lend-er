@@ -7,9 +7,8 @@ namespace Lend_er.Entities
 {
     public class Creditors
     {
-        [Key]
-        public int Id { get; set; }
-        public int userId { get; set; }
+        public Guid Id { get; set; }
+        public string userId { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string Address { get; set; }
@@ -17,9 +16,9 @@ namespace Lend_er.Entities
         public string Email { get; set; }
         public DateTime DateOwed { get; set; }
         public DateTime DueDate { get; set; }
-        public DateTime DatePaid { get; set; }
         public bool status { get; set; }
-        public int AccountNumber { get; set; }
-        public string BankName { get; set; }
+        public string Description { get; set; }
+        public int MoneyOwed { get; set; }
+        public double percentageInterest { get; set; }
     }
 }

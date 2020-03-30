@@ -1,0 +1,50 @@
+﻿@model Lend_er.Web.ViewModels.DashboardView
+
+@{
+    Layout = "~/Views/Shared/dashboard.cshtml";
+    ViewBag.Title = "Details page";
+    var imagepath = "/ProfilePhoto/" + (Model.AppUser.PhotoPath ?? "no_image.jpg");
+}
+
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </ul>
+</div>
+
+
+<!-- Basic Form-->
+<div class="col-lg-10 ml-0">
+    <div class="block">
+        <div class="title"><strong class="d-block">my view || @Model.AppUser.FirstName @Model.AppUser.LastName</strong><span class="d-block">A Lanister always pays His depts.</span></div>
+        <div class="block-body">        
+            <div class="row">
+                <div class="col-lg-3 pr-3">
+                    <img src="@imagepath" class="img-fluid img-thumbnail rounded-pill" />
+                    <p class="bg-danger text-white p-1 m-1">@Model.AppUser.UserName</p>
+                </div>
+
+                <div class="col-lg-6 pl-3 text-white-50">
+                    <hr />
+                    <h2 class="text-primary">Basic Info</h2>
+                    <hr />
+                    <p><b>First Name:</b> <span>@Model.AppUser.FirstName</span></p>
+                    <p><b>Last Name:</b> <span>@Model.AppUser.LastName</span></p>
+                    <p><b>Gender:</b> <span>@Model.AppUser.Gender</span></p>
+
+                    <hr />
+                    <h2 class="text-primary">Contact Info</h2>
+                    <hr />
+                    <p><b>State:</b> <span>@Model.AppUser.State</span></p>
+                    <p><b>Phone:</b> <span>@Model.AppUser.PhoneNumber</span></p>
+                    <p><b>Address:</b> <span>@Model.AppUser.Address</span></p>
+                    <p><b>Email:</b> <span>@Model.AppUser.Email</span></p>
+
+                    <a asp-action="edit" asp-controller="Home" asp-route-id="@Model.AppUser.Id" class="btn btn-warning">Edit</a>
+                </div>
+            </div> 
+        </div>
+    </div>
+</div>

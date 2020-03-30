@@ -1,0 +1,65 @@
+﻿@model IEnumerable<Lend_er.Entities.Deptors>
+
+@{
+    Layout = "~/Views/Shared/dashboard.cshtml";
+    ViewBag.Title = "Active deptors";
+}
+
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </ul>
+</div>
+
+<div class="col-lg-12">
+    <div class="block">
+        <div class="title"><strong>All deptors</strong></div>
+        <div class="table-responsive">
+            <table class="table table-striped table-sm table-hover">
+                <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Amount</th>
+                        <th>Date Borrowed</th>
+                        <th>Due Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var deptor in Model)
+                    {
+                        int count = 0;
+                        <tr>
+                            <td>1</td>
+                            <td><a asp-action="details" asp-controller="deptors" asp-route-id="@deptor.Id">@deptor.FirstName</a></td>
+                            <td>@deptor.LastName</td>
+                            <td><span>&#8358</span>@deptor.MoneyOwed</td>
+                            <td>@deptor.DateOwed.Date</td>
+                            <td>@deptor.DueDate.Date</td>
+                            <td>
+                                <a asp-action="edit" asp-controller="deptors" asp-route-id="@deptor.Id" class="btn btn-primary">edit</a>
+                                <a asp-action="Delete" asp-controller="deptors" asp-route-id="@deptor.Id" class="btn btn-danger" id="btn99">delete</a>
+                                @if (deptor.status == false)
+                                {
+                                    <a asp-action="payoffline" asp-controller="Deptors" asp-route-id="@deptor.Id" class="btn btn-success">pay offline</a>
+                                }
+                            </td>
+                        </tr>
+count++;
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+@section Scripts{
+    <script>
+        document.getElementById("btn").addEventListener('click', function () {
+            swal("Delete Successful!", "one item deleted!", "success");
+        });
+    </script>
+}

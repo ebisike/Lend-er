@@ -10,7 +10,7 @@ namespace Lend_er.Web.ViewModels
 {
     public class RegistrationViewModel
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Required]
         [Display(Name = "First Name")]
@@ -21,6 +21,7 @@ namespace Lend_er.Web.ViewModels
         public string LastName { get; set; }
 
         [Required]
+        [EmailAddress]
         public string Email { get; set; }
         public gender Gender { get; set; }
 

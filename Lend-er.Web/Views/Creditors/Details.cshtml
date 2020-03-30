@@ -1,0 +1,52 @@
+﻿@model Lend_er.Web.ViewModels.Creditor.DashBoardViewModel
+
+@{
+    Layout = "~/Views/Shared/dashboard.cshtml";
+    ViewBag.Title = "Credit details";
+    ViewData["Title"] = "Details";
+}
+
+
+<!-- Breadcrumb-->
+<div class="container-fluid">
+    <ul class="breadcrumb">
+        <li class="breadcrumb-item"><a asp-action="index" asp-controller="Home">Home</a></li>
+        <li class="breadcrumb-item active">@ViewBag.Title</li>
+    </ul>
+</div>
+
+
+<section class="no-padding-bottom">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-lg-9">
+                <div class="drills-chart block">
+                    <h2>@Model.creditor.FirstName @Model.creditor.LastName</h2>
+                    <hr />
+                    <p class="text-uppercase">@Model.creditor.Description</p>
+                    <h5>Amount owed</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.creditor.MoneyOwed</p>
+                    <h5>Date Owed</h5>
+                    <p class="text-primary">@Model.creditor.DateOwed</p>
+                    <h5>Due Date</h5>
+                    <p class="text-primary">@Model.creditor.DueDate</p>
+                    <hr /><hr />
+                    <h3>Payments</h3>
+                    <h5>Money Payable</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.creditor.MoneyOwed</p>
+                    <h5>Total amount at @Model.creditor.percentageInterest interest rate per day</h5>
+                    <p class="text-primary"><span>&#8358</span>@Model.total</p>
+                    @if (Model.creditor.status == false)
+                    {
+                        <a class="btn btn-success" asp-action="claim" asp-controller="Creditors" asp-route-id="@Model.creditor.Id">claim payment</a>
+                        <a class="btn btn-primary" asp-action="edit" asp-controller="Creditors" asp-route-id="@Model.creditor.Id">edit</a>
+                    }
+                    else
+                    {
+                        <a class="btn btn-primary" asp-action="edit" asp-controller="Creditors" asp-route-id="@Model.creditor.Id">edit</a>
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

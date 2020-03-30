@@ -10,8 +10,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Lend_er.Data.Migrations
 {
     [DbContext(typeof(LenderDbContext))]
-    [Migration("20200326235931_extendUser2")]
-    partial class extendUser2
+    [Migration("20200327164017_init2")]
+    partial class init2
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -106,10 +106,9 @@ namespace Lend_er.Data.Migrations
 
             modelBuilder.Entity("Lend_er.Entities.Creditors", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("AccountNumber")
                         .HasColumnType("int");
@@ -121,9 +120,6 @@ namespace Lend_er.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateOwed")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DatePaid")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DueDate")
@@ -138,14 +134,20 @@ namespace Lend_er.Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MoneyOwed")
+                        .HasColumnType("int");
+
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<double>("percentageInterest")
+                        .HasColumnType("float");
 
                     b.Property<bool>("status")
                         .HasColumnType("bit");
 
-                    b.Property<int>("userId")
-                        .HasColumnType("int");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
@@ -154,10 +156,9 @@ namespace Lend_er.Data.Migrations
 
             modelBuilder.Entity("Lend_er.Entities.Deptors", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int")
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<int>("AccountNumber")
                         .HasColumnType("int");
@@ -169,9 +170,6 @@ namespace Lend_er.Data.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<DateTime>("DateOwed")
-                        .HasColumnType("datetime2");
-
-                    b.Property<DateTime>("DatePaid")
                         .HasColumnType("datetime2");
 
                     b.Property<DateTime>("DueDate")
@@ -186,18 +184,41 @@ namespace Lend_er.Data.Migrations
                     b.Property<string>("LastName")
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<int>("MoneyOwed")
+                        .HasColumnType("int");
+
                     b.Property<string>("Phone")
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<bool>("status")
                         .HasColumnType("bit");
 
-                    b.Property<int>("userId")
-                        .HasColumnType("int");
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
                     b.ToTable("deptors");
+                });
+
+            modelBuilder.Entity("Lend_er.Entities.Payments", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<DateTime>("DatePaid")
+                        .HasColumnType("datetime2");
+
+                    b.Property<double>("TotalAmount")
+                        .HasColumnType("float");
+
+                    b.Property<string>("userId")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("payments");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
