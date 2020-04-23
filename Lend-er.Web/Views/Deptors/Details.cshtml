@@ -26,9 +26,9 @@
                     <h5>Amount owed</h5>
                     <p class="text-primary"><span>&#8358</span>@Model.deptors.MoneyOwed</p>
                     <h5>Date Owed</h5>
-                    <p class="text-primary">@Model.deptors.DateOwed</p>
+                    <p class="text-primary">@Model.deptors.DateOwed.ToLongDateString()</p>
                     <h5>Due Date</h5>
-                    <p class="text-primary">@Model.deptors.DueDate</p>
+                    <p class="text-primary">@Model.deptors.DueDate.ToLongDateString()</p>
                     <hr /><hr />
                     <h3>Payments</h3>
                     <h5>Money Payable</h5>
@@ -41,12 +41,12 @@
                     <p class="text-primary"><span>&#8358</span>@Model.balance</p>
                     @if (Model.deptors.status == false)
                     {
-                        <a asp-action="payoffline" asp-controller="Deptors" asp-route-id="@Model.deptors.Id" class="btn btn-success">pay offline</a>
-                        <a class="btn btn-primary" asp-action="edit" asp-controller="deptors" asp-route-id="@Model.deptors.Id">edit</a>
+                        <a asp-action="payoffline" asp-controller="Deptors" asp-route-id="@Model.deptors.Id" class="btn btn-success  btn-sm">pay offline</a>
+                        <a class="btn btn-primary btn-sm" asp-action="edit" asp-controller="deptors" asp-route-id="@Model.deptors.Id">edit</a>
                     }
                     else
                     {
-                        <a class="btn btn-primary" asp-action="edit" asp-controller="deptors" asp-route-id="@Model.deptors.Id">edit</a>
+                        <a class="btn btn-primary btn-sm" asp-action="edit" asp-controller="deptors" asp-route-id="@Model.deptors.Id">edit</a>
                     }
                 </div>
             </div>

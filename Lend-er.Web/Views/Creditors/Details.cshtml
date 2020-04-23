@@ -27,9 +27,9 @@
                     <h5>Amount owed</h5>
                     <p class="text-primary"><span>&#8358</span>@Model.creditor.MoneyOwed</p>
                     <h5>Date Owed</h5>
-                    <p class="text-primary">@Model.creditor.DateOwed</p>
+                    <p class="text-primary">@Model.creditor.DateOwed.ToLongDateString()</p>
                     <h5>Due Date</h5>
-                    <p class="text-primary">@Model.creditor.DueDate</p>
+                    <p class="text-primary">@Model.creditor.DueDate.ToLongDateString()</p>
                     <hr /><hr />
                     <h3>Payments</h3>
                     <h5>Money Payable</h5>

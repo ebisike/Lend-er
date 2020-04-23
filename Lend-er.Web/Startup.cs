@@ -8,10 +8,12 @@ using Lend_er.Services.Implementation;
 using Lend_er.Services.Interface;
 using Lend_er.Services.Services.Implementation;
 using Lend_er.Services.Services.Interface;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -34,8 +36,20 @@ namespace Lend_er.Web
             services.AddControllersWithViews();
             services.AddDbContextPool<LenderDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("LenderConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>().AddEntityFrameworkStores<LenderDbContext>();
+            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            {
+                options.SignIn.RequireConfirmedEmail = true;
+                options.Lockout.MaxFailedAccessAttempts = 3;
+                options.Lockout.DefaultLockoutTimeSpan = TimeSpan.FromMinutes(5);
+            }).AddEntityFrameworkStores<LenderDbContext>().AddDefaultTokenProviders();
+
             services.AddMvc(opt => opt.EnableEndpointRouting = false);
+            services.AddMvc(options =>
+            {
+                var policy = new AuthorizationPolicyBuilder().RequireAuthenticatedUser().Build();
+                options.Filters.Add(new AuthorizeFilter(policy));
+            });
+
             services.AddScoped(typeof(IRepository<>), typeof(Repository<>));
             services.AddScoped<ICreditDebit, CreditDebit>();
             services.AddScoped<IUserInfo, UserInfo>();
@@ -59,17 +73,13 @@ namespace Lend_er.Web
             app.UseStaticFiles();
             app.UseAuthentication();
 
-            app.UseRouting();
-            app.UseMvc();
+            //app.UseRouting();
+            app.UseMvc(routes=> 
+            {
+                routes.MapRoute("default", "{controller=Account}/{action=login}/{id?}");
+            });
 
-            app.UseAuthorization();
-
-            //app.UseEndpoints(endpoints =>
-            //{
-            //    endpoints.MapControllerRoute(
-            //        name: "default",
-            //        pattern: "{controller=Home}/{action=Index}/{id?}");
-            //});
+            app.UseAuthorization();            
         }
     }
 }

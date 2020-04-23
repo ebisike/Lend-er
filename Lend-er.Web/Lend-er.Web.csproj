@@ -26,6 +26,11 @@
     <ProjectReference Include="..\Lend-er.Services\Lend-er.Services.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\EmailTokens\" />
+    <Folder Include="wwwroot\PasswordReset\" />
+  </ItemGroup>
+
 
 
 </Project>

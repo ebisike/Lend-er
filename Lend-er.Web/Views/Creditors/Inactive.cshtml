@@ -38,8 +38,8 @@
                             <td><a asp-action="details" asp-controller="Creditors" asp-route-id="@creditor.Id">@creditor.FirstName</a></td>
                             <td>@creditor.LastName</td>
                             <td><span>&#8358</span>@creditor.MoneyOwed</td>
-                            <td>@creditor.DateOwed.Date</td>
-                            <td>@creditor.DueDate.Date</td>
+                            <td>@creditor.DateOwed.Date.ToLongDateString()</td>
+                            <td>@creditor.DueDate.Date.ToLongDateString()</td>
                             <td>
                                 <a asp-action="edit" asp-controller="Creditors" asp-route-id="@creditor.Id" class="btn btn-primary">edit</a>
                                 <a asp-action="Delete" asp-controller="Creditors" asp-route-id="@creditor.Id" class="btn btn-danger" id="btn">delete</a>

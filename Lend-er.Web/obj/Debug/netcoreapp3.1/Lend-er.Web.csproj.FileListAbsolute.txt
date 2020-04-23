@@ -172,3 +172,9 @@ C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcore
 C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Deptors\PayOffline.cshtml.g.cs
 C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Details.cshtml.g.cs
 C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Home\Edit.cshtml.g.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\AccountLocked.cshtml.g.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\PasswordReset.cshtml.g.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\RegistrationSuccessful.cshtml.g.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\ConfirmEmail.cshtml.g.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\ForgotPassword.cshtml.g.cs
+C:\Users\Shopinverse.com\Documents\GitRepo\Lend-er\Lend-er.Web\obj\Debug\netcoreapp3.1\Razor\Views\Account\ResetPassword.cshtml.g.cs

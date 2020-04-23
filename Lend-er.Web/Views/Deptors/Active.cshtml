@@ -37,14 +37,14 @@
                             <td><a asp-action="details" asp-controller="deptors" asp-route-id="@deptor.Id">@deptor.FirstName</a></td>
                             <td>@deptor.LastName</td>
                             <td><span>&#8358</span>@deptor.MoneyOwed</td>
-                            <td>@deptor.DateOwed.Date</td>
-                            <td>@deptor.DueDate.Date</td>
+                            <td>@deptor.DateOwed.Date.ToLongDateString()</td>
+                            <td>@deptor.DueDate.Date.ToLongDateString()</td>
                             <td>
-                                <a asp-action="edit" asp-controller="deptors" asp-route-id="@deptor.Id" class="btn btn-primary">edit</a>
-                                <a asp-action="Delete" asp-controller="deptors" asp-route-id="@deptor.Id" class="btn btn-danger" id="btn99">delete</a>
+                                <a asp-action="edit" asp-controller="deptors" asp-route-id="@deptor.Id" class="btn btn-primary btn-sm">edit</a>
+                                <a asp-action="Delete" asp-controller="deptors" asp-route-id="@deptor.Id" class="btn btn-danger btn-sm" id="btn99">delete</a>
                                 @if (deptor.status == false)
                                 {
-                                    <a asp-action="payoffline" asp-controller="Deptors" asp-route-id="@deptor.Id" class="btn btn-success">pay offline</a>
+                                    <a asp-action="payoffline" asp-controller="Deptors" asp-route-id="@deptor.Id" class="btn btn-success btn-sm">pay offline</a>
                                 }
                             </td>
                         </tr>
